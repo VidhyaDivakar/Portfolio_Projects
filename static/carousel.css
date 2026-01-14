@@ -1,0 +1,14 @@
+.carousel-cell {
+    width: 50%;
+    height: 150px;
+}
+
+.carousel-cell img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.carousel-cell a:hover {
+    text-decoration: underline;
+}
