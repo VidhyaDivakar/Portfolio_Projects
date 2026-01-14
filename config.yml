@@ -1,0 +1,38 @@
+# Configuration file for Portfolio Projects
+
+# Base URL
+base_url: "https://example.com"
+theme: [docsy]
+
+# Site metadata
+site:
+  title: "Portfolio Projects"
+  description: "A collection of portfolio projects"
+  author: "VidhyaDivakar"
+  language: "en"
+
+# Build settings
+build:
+  source_dir: "./src"
+  output_dir: "./build"
+  exclude:
+    - node_modules
+    - ".git"
+    - ".env"
+
+# Server configuration
+server:
+  port: 3000
+  host: "localhost"
+
+# Paths
+paths:
+  projects: "/projects"
+  about: "/about"
+  contact: "/contact"
+
+# Features
+features:
+  enable_comments: true
+  enable_analytics: true
+  publishDir: public
