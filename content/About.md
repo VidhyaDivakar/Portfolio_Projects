@@ -1,3 +1,11 @@
+---
+
+title: "About"
+weight: 10
+
+---
+
+
 
 A dedicated and responsible professional holding 8.4 years of work experienceI am a Software Documentation expert passionate about collaborating closely with product teams to deliver enterprise-grade documentation. I focus on understanding the nuances of software to create user-friendly, meaningful guides, API documentation, and more, helping reduce dependency and enhance accessibility for users.
 

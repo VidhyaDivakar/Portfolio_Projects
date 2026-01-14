@@ -1,0 +1,14 @@
+baseURL: "https://vidhyadivakar.github.io/Protfolio-Projects"
+title: "Portfolio-Projects"
+languageCode: "en"
+theme: "docsy"
+publishDir: "public"
+
+params:
+  description: "A collection of projects"
+  author: "Vidhya Divakar"
+  enable_comments: true
+  enable_analytics: true
+
+permalinks:
+  projects: "/project_projects/"
