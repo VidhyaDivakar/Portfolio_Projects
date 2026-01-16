@@ -27,5 +27,3 @@ Feel free to reach out via [email](mailto:vidhyadivakar@gmail.com) or connect on
 <!-- Carousel goes here -->
 
   {{ partial "carousel.html" . }}
-
-*Last updated: Jan 2026*

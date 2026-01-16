@@ -1,7 +1,7 @@
 baseURL: "https://vidhyadivakar.github.io/Portfolio-Projects/"
 title: "Portfolio-Projects"
 languageCode: "en"
-#theme: docsy
+theme: docsy
 publishDir: "public"
 
 params:
