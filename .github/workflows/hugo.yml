@@ -34,8 +34,8 @@ jobs:
               # 🟢 ADD THIS: Install Docsy dependencies
             # Docsy requires PostCSS, Autoprefixer, and sometimes specific Bootstrap versions Docsy uses PostCSS for Autoprefixer and SCSS compilation.
             # Without a npm install step, these tools are missing from the runner's path, causing the TOCSS transformation to fail
-            - name: Install dependencies
-              run: npm install
+            - name: Install Docsy dependencies
+              run: cd themes/docsy && npm install
 
             # 2️⃣ Setup Hugo (extended version needed for SCSS support)
             - name: Setup Hugo
