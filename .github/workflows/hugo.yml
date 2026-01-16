@@ -4,6 +4,7 @@ on:
     push:
         branches:
             - main # Trigger deployment on pushes to main
+    workflow_dispatch: # Allow manual triggering of the workflow
 
 permissions:
     contents: read
@@ -12,7 +13,7 @@ permissions:
 
 concurrency:
     group: "pages"
-    cancel-in-progress: true
+    cancel-in-progress: false
 
 jobs:
     build:
@@ -25,9 +26,20 @@ jobs:
                   submodules: true # important for Docsy theme submodule
                   fetch-depth: 0 # Fetch all history for accurate Hugo module handling
 
+            # 🟢 ADD THIS: Setup Node.js to use PostCSS
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+              # 🟢 ADD THIS: Install Docsy dependencies
+            # Docsy requires PostCSS, Autoprefixer, and sometimes specific Bootstrap versions Docsy uses PostCSS for Autoprefixer and SCSS compilation.
+            # Without a npm install step, these tools are missing from the runner's path, causing the TOCSS transformation to fail
+            - name: Install dependencies
+              run: npm install
+
             # 2️⃣ Setup Hugo (extended version needed for SCSS support)
             - name: Setup Hugo
-              uses: peaceiris/actions-hugo@v2
+              uses: peaceiris/actions-hugo@v3
               with:
                   hugo-version: latest
                   extended: true #mandatory for themes using SCSS, like Docsy, bootstrap
