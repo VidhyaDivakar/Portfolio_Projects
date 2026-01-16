@@ -30,7 +30,7 @@ jobs:
               uses: peaceiris/actions-hugo@v2
               with:
                   hugo-version: latest
-                  extended: true
+                  extended: true #mandatory for themes using SCSS, like Docsy, bootstrap
 
             # 3️⃣ Build your Hugo site with minification
             - name: Build Hugo site
