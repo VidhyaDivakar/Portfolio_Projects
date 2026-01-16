@@ -1,11 +1,7 @@
-
 ---
 title: "Home"
 description: "Welcome to my Portfolio"
-output:[HTML,RSS]
-
 ---
-
 ## Welcome
 
 This is my portfolio website built with [Hugo](https://https://github.com/VidhyaDivakar/Portfolio_Projects/).
@@ -27,7 +23,9 @@ With 9 years of experience as Technical Writer and Engineering background I am w
 Feel free to reach out via [email](mailto:vidhyadivakar@gmail.com) or connect on [LinkedIn](www.linkedin.com/in/vidhya-divakar).
 
 ## Corousel
+
 <!-- Carousel goes here -->
+
   {{ partial "carousel.html" . }}
 
 *Last updated: Jan 2026*
