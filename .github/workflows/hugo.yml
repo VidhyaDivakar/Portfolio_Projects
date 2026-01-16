@@ -22,7 +22,8 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
               with:
-                  submodules: true # important for Docsy theme
+                  submodules: true # important for Docsy theme submodule
+                  fetch-depth: 0 # Fetch all history for accurate Hugo module handling
 
             # 2️⃣ Setup Hugo (extended version needed for SCSS support)
             - name: Setup Hugo
