@@ -1,7 +1,7 @@
 baseURL: "https://vidhyadivakar.github.io/Protfolio-Projects"
 title: "Portfolio-Projects"
 languageCode: "en"
-theme: "docsy"
+#theme: docsy
 publishDir: "public"
 
 params:
@@ -17,3 +17,9 @@ module:
   hugoVersion:
     extended: true
     min: "0.110.0"
+  replacements:
+    "github.com/FortAwesome/Font-Awesome -> ."
+    #In Hugo's module configuration, the syntax "github.com/FortAwesome/Font-Awesome -> ." acts as a redirection directive that tells Hugo to look for the specified module's content in the current project root (represented by the dot .) rather than downloading it from the remote GitHub repository. This is particularly useful for fixing compatibility issues with repositories like Font-Awesome that may have complex directory structures or non-standard version tagging that prevents Hugo from finding the necessary files automatically. By using this replacement, you essentially "mount" the module's namespace to your local environment, bypassing the remote fetch and resolving the "module not found" error caused by Hugo searching for a physical folder in your local themes/ directory.
+    #Hugo cannot search for Font-Awesome inside your local themes/docsy folder because Docsy is designed to load its core dependencies, like Font-Awesome and Bootstrap, as external Hugo Modules rather than bundled files. Even if the Docsy folder exists, Hugo's module system treats github.com/FortAwesome/Font-Awesome as a distinct dependency that must be fetched independently or mapped explicitly in your hugo.yaml. When you use Docsy as a module or a submodule, Hugo expects these dependencies to be managed via the go.mod file; if they aren't explicitly imported or "replaced" to point to the correct location, Hugo defaults to searching for them as physical folders in your themes/ directory, leading to the "not found" error.
+  imports:
+    - path: "github.com/FortAwesome/Font-Awesome"
