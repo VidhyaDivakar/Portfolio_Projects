@@ -1,4 +1,4 @@
-baseURL: "https://vidhyadivakar.github.io/Portfolio-Projects/"
+baseURL: "https://vidhyadivakar.github.io/Portfolio_Projects/"
 title: "Portfolio-Projects"
 languageCode: "en"
 theme: "docsy"
@@ -11,7 +11,7 @@ params:
   enable_analytics: true
 
 permalinks:
-  projects: "/project_projects/"
+  projects: "/Portfolio_Projects/"
 
 module:
   hugoVersion:
