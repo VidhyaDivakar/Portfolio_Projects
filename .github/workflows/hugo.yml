@@ -37,9 +37,13 @@ jobs:
               # 🟢 ADD THIS: Install Docsy dependencies
             # Docsy requires PostCSS, Autoprefixer, and sometimes specific Bootstrap versions Docsy uses PostCSS for Autoprefixer and SCSS compilation.
             # Without a npm install step, these tools are missing from the runner's path, causing the TOCSS transformation to fail
-            - name: Install Docsy dependencies
-              run: cd themes/docsy && npm install
 
+            # When Hugo runs at the root of your project, it looks for postcss in the root's node_modules. Even though you installed them inside themes/docsy, Hugo often can't "see" them there.
+            # The Fix: You need to install the dependencies in the root folder as well so the tools are globally available to the Hugo process.
+            - name: Install Root Level Dependencies
+              run: npm install
+            - name: Install Docsy Root Level Dependencies
+              run: cd themes/docsy && npm install
             # 2️⃣ Setup Hugo (extended version needed for SCSS support)
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@v3
