@@ -30,7 +30,10 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: "20"
+                  node-version: "18"
+
+            - name: Install PostCSS
+              run: npm install -D postcss postcss-cli autoprefixer
               # 🟢 ADD THIS: Install Docsy dependencies
             # Docsy requires PostCSS, Autoprefixer, and sometimes specific Bootstrap versions Docsy uses PostCSS for Autoprefixer and SCSS compilation.
             # Without a npm install step, these tools are missing from the runner's path, causing the TOCSS transformation to fail
@@ -49,7 +52,7 @@ jobs:
               env:
                   HUGO_ENV: production
                   HUGO_ENABLEGITINFO: true
-              run: hugo --minify
+              run: hugo --gc --minify
 
             # 4️⃣ Upload the generated public folder as artifact for Pages
             - name: Upload Pages artifact
