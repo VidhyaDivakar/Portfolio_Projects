@@ -1,4 +1,4 @@
 ---
-title: "Documentation Blog"
+title: "Blog"
 weight: 1
 ---
