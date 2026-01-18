@@ -56,7 +56,10 @@ jobs:
               env:
                   HUGO_ENV: production
                   HUGO_ENABLEGITINFO: true
-              run: hugo --gc --minify
+              run: |
+                  hugo mod clean
+                  hugo mod get
+                  hugo --gc --minify
 
             # 4️⃣ Upload the generated public folder as artifact for Pages
             - name: Upload Pages artifact
