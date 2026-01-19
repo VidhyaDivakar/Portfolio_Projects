@@ -1,5 +1,10 @@
 ---
-title: "Home"
+title: Documentation
+linkTitle: Docs
+menu:
+  main:
+    weight: 20
+    pre: <i class='fa-solid fa-book'></i>
 description: "Welcome to my Portfolio"
 ---
 ## Welcome
