@@ -14,8 +14,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-module.exports = {
-    plugins: {
-        autoprefixer: {}
-    },
+/** @type {import('postcss-load-config').Config} */
+const config = {
+    plugins: [
+        require('autoprefixer'),
+        require('postcss-nested'),
+        require('fail-on-warn')
+    ]
 }
+
+module.exports = config
+
