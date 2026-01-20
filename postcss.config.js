@@ -19,7 +19,6 @@ const config = {
     plugins: [
         require('autoprefixer'),
         require('postcss-nested'),
-        require('fail-on-warn')
     ]
 }
 
